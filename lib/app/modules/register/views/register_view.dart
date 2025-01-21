@@ -10,6 +10,7 @@ class RegisterView extends GetView<RegisterController> {
   const RegisterView({super.key});
   @override
   Widget build(BuildContext context) {
+    RegisterController controller = Get.put(RegisterController());
     return Scaffold(
       backgroundColor: HexColor('#feeee8'),
       body: SingleChildScrollView(
@@ -33,6 +34,9 @@ class RegisterView extends GetView<RegisterController> {
                 ),
               ),
             ),
+            const SizedBox(
+              height: 10,
+            ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15),
               child: TextField(
@@ -43,6 +47,9 @@ class RegisterView extends GetView<RegisterController> {
                   hintText: 'Masukin Emailnya disini',
                 ),
               ),
+            ),
+            const SizedBox(
+              height: 10,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -56,15 +63,41 @@ class RegisterView extends GetView<RegisterController> {
                 ),
               ),
             ),
+            const SizedBox(
+              height: 10,
+            ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
               child: TextField(
-                controller: controller.passwordConfirmationController,
+                controller: controller.passwordConfirmController,
                 obscureText: true,
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Konfirmasi Password',
                   hintText: 'Masukkin ulang passwordnya',
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Container(
+              height: 50,
+              width: 250,
+              decoration: BoxDecoration(
+                color: Colors.blue,
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: TextButton(
+                onPressed: () {
+                  controller.registerNow();
+                },
+                child: const Text(
+                  'Register Now',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 25,
+                  ),
                 ),
               ),
             ),
