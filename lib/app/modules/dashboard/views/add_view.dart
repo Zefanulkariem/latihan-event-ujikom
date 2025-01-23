@@ -12,6 +12,10 @@ class AddView extends GetView {
   Widget build(BuildContext context) {
     // Nih, bikin controller buat ngurusin dashboard pake Get.put
     DashboardController controller = Get.put(DashboardController());
+    controller.nameController.clear();
+    controller.descriptionController.clear();
+    controller.eventDateController.clear();
+    controller.locationController.clear();
     return Scaffold(
       // AppBar nih, buat header atas. Judulnya "Add Your Event", terus ada di tengah biar estetik
       appBar: AppBar(
@@ -85,8 +89,8 @@ class AddView extends GetView {
                 );
                 // Kalau tanggalnya kepilih, langsung di-update
                 if (selectedDate != null) {
-                  controller.eventDateController.text = 
-                    DateFormat('yyyy-MM-dd').format(selectedDate);
+                  controller.eventDateController.text =
+                      DateFormat('yyyy-MM-dd').format(selectedDate);
                 }
               },
             ),

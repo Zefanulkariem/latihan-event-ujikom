@@ -43,13 +43,10 @@ class EditView extends GetView {
             }
             if (snapshot.hasData) {
               // Kalau datanya udah ada, isi formnya otomatis
-              controller.nameController.text = snapshot.data!.name ?? '';
-              controller.descriptionController.text =
-                  snapshot.data!.description ?? '';
-              controller.eventDateController.text =
-                  snapshot.data!.eventDate ?? '';
-              controller.locationController.text =
-                  snapshot.data!.location ?? '';
+              controller.nameController.text = snapshot.data!.name!;
+              controller.descriptionController.text = snapshot.data!.description!;
+              controller.eventDateController.text = snapshot.data!.eventDate!;
+              controller.locationController.text = snapshot.data!.location!;
             }
             return Column(
               children: [

@@ -78,9 +78,7 @@ class DashboardController extends GetxController {
         'event_date': eventDateController.text,
         'location': locationController.text,
       },
-      headers: {
-        'Authorization': "Bearer $token"
-      },
+      headers: {'Authorization': "Bearer $token"},
       contentType: "application/json",
     );
 

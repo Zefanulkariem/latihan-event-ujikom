@@ -49,8 +49,7 @@ class YourEventView extends GetView {
               // Mengambil event berdasarkan index
               final event = controller.yourEvents[index];
               return Column(
-                crossAxisAlignment: CrossAxisAlignment
-                    .start, // Menyusun elemen-elemen secara vertikal
+                crossAxisAlignment: CrossAxisAlignment.start, // Menyusun elemen-elemen secara vertikal
                 children: [
                   // Menampilkan gambar event
                   Image.network(
@@ -63,8 +62,7 @@ class YourEventView extends GetView {
                       return const SizedBox(
                         height: 200,
                         child: Center(
-                            child: Text(
-                                'Image not found')), // Tampilkan teks "Image not found"
+                            child: Text('Image not found')), // Tampilkan teks "Image not found"
                       );
                     },
                   ),
@@ -134,13 +132,9 @@ class YourEventView extends GetView {
                         },
                       ),
                       TextButton.icon(
-                        icon: const Icon(Icons.delete,
-                            color:
-                                Colors.red), // Ikon delete dengan warna merah
+                        icon: const Icon(Icons.delete, color: Colors.red), // Ikon delete dengan warna merah
                         label: const Text('Delete',
-                            style: TextStyle(
-                                color:
-                                    Colors.red)), // Teks "Delete" warna merah
+                            style: TextStyle(color:Colors.red)), // Teks "Delete" warna merah
                         onPressed: () {
                           controller.deleteEvent(id: event.id!);
                         },
